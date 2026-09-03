@@ -1,0 +1,27 @@
+# Data (large / regenerable — keep raw CSV but not derived artifacts)
+data/features.parquet
+data/test_predictions.parquet
+
+# Models & experiment tracking (regenerate via pipeline; large binaries)
+models/*.joblib
+mlflow.db
+mlruns/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+
+# OS/editor
+.DS_Store
+.vscode/
+.idea/
+
+# Report build artifacts
+reports/*.pdf
+reports/page-*.jpg
+
+# Node (only used to generate the docx report)
+node_modules/
