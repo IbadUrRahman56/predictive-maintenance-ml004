@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install pytest flake8
+
+      - name: Lint
+        run: flake8 src/ tests/ --max-line-length=120 --extend-ignore=E203,W503 --exit-zero
+
+      - name: Run tests
+        run: pytest tests/ -v
+
+      - name: Run feature engineering pipeline (smoke test)
+        run: python src/feature_engineering.py
+
+      - name: Run model training pipeline (smoke test)
+        run: python src/train_models.py
