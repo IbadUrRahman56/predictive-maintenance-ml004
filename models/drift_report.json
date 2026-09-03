@@ -1,0 +1,30 @@
+[
+  {
+    "feature": "vibration_rms",
+    "overall_mean": 1.622,
+    "recent_mean": 1.424,
+    "pct_shift": 0.122,
+    "drift_flag": false
+  },
+  {
+    "feature": "temperature_motor",
+    "overall_mean": 51.398,
+    "recent_mean": 48.175,
+    "pct_shift": 0.063,
+    "drift_flag": false
+  },
+  {
+    "feature": "pressure_level",
+    "overall_mean": 58.989,
+    "recent_mean": 57.109,
+    "pct_shift": 0.032,
+    "drift_flag": false
+  },
+  {
+    "feature": "rpm",
+    "overall_mean": 1144.336,
+    "recent_mean": 1125.708,
+    "pct_shift": 0.016,
+    "drift_flag": false
+  }
+]
