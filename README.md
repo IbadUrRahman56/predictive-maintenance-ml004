@@ -51,10 +51,31 @@ python src/explain_and_visualize.py
 # 4. Log runs to MLflow + run drift check
 python src/mlops_tracking.py
 
-# 5. Serve predictions via API
-cd src && uvicorn api:app --reload --port 8000
+# 5. Serve predictions via API (run from project root)
+python -m uvicorn src.api:app --reload --port 8000
 # Interactive docs: http://localhost:8000/docs
+
+# 6. Launch the interactive Operations Dashboard
+streamlit run src/dashboard.py
 ```
+
+## Operations Dashboard
+
+`src/dashboard.py` is a Streamlit app that gives engineers a live view of the fleet:
+
+- Fleet-wide risk table, color-coded by health score
+- Health score by machine type
+- Per-machine drill-down with health trend
+- Live "what-if" predictor for manually entered sensor readings
+
+Run it with `streamlit run src/dashboard.py` (requires the models to already
+be trained — run `src/train_models.py` first).
+
+## Presentation
+
+`reports/ML-004_Presentation.pptx` is a 12-slide deck covering the business
+problem, architecture, model results, explainability, MLOps, and the live
+demo — ready to present as-is or adapt.
 
 ## Requirements
 

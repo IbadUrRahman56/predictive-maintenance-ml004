@@ -9,3 +9,5 @@ fastapi
 uvicorn
 mlflow
 joblib
+streamlit
+plotly
