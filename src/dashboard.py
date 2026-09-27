@@ -15,7 +15,7 @@ st.set_page_config(
     page_title="Predictive Maintenance | Operations Dashboard",
     layout="wide",
     page_icon="🏭",
-    initial_sidebar_state="expanded",
+    initial_sidebar_state="auto",
 )
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -111,6 +111,54 @@ st.markdown(f"""
     button[data-testid*="FormSubmit"] p {{ color: white !important; font-weight: 700 !important; }}
 
     hr {{ border-color: {BORDER}; }}
+
+    @media (max-width: 768px) {{
+        section.main > div.block-container {{
+            padding: 1rem 0.85rem 2rem;
+        }}
+
+        div[data-testid="stHorizontalBlock"] {{
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }}
+
+        div[data-testid="stHorizontalBlock"] > div[data-testid="stColumn"] {{
+            flex: 1 1 100% !important;
+            width: 100% !important;
+            min-width: 0 !important;
+        }}
+
+        .hero {{
+            padding: 20px 18px;
+            border-radius: 10px;
+        }}
+
+        .hero-title {{
+            font-size: 24px;
+            line-height: 1.2;
+        }}
+
+        .hero-sub {{
+            font-size: 13px;
+            line-height: 1.5;
+        }}
+
+        .kpi-card {{
+            height: auto;
+            min-height: 96px;
+            padding: 16px;
+        }}
+
+        .kpi-value {{
+            font-size: 26px;
+            overflow-wrap: anywhere;
+        }}
+
+        div[data-testid="stDataFrame"],
+        div[data-testid="stPlotlyChart"] {{
+            max-width: 100%;
+        }}
+    }}
 </style>
 """, unsafe_allow_html=True)
 
