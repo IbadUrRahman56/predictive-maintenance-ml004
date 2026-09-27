@@ -15,7 +15,7 @@ st.set_page_config(
     page_title="Predictive Maintenance | Operations Dashboard",
     layout="wide",
     page_icon="🏭",
-    initial_sidebar_state="auto",
+    initial_sidebar_state="expanded",
 )
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -48,7 +48,7 @@ st.markdown(f"""
     }}
     section[data-testid="stSidebar"] * {{ color: #D8DCE0 !important; }}
 
-    #MainMenu, footer, header {{ visibility: hidden; }}
+    #MainMenu, footer {{ visibility: hidden; }}
 
     h1, h2, h3, h4, p, span, label, div {{ color: #E8EAED; }}
 
